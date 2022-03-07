@@ -4,43 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <style>
-      .loader {
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        width: 120px;
-        height: 120px;
-        display: none;
-        -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
-      }
-      .loader.active {
-        display: block;
-      }
+    <link rel="stylesheet" href="style.css" />
 
-      /* Safari */
-      @-webkit-keyframes spin {
-        0% {
-          -webkit-transform: rotate(0deg);
-        }
-        100% {
-          -webkit-transform: rotate(360deg);
-        }
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      .items.deactive {
-        display: none;
-      }
-    </style>
     <link
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
