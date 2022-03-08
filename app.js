@@ -23,10 +23,13 @@ fetchData().catch((error) => {
 function setUsers(albums) {
   let output = "";
   if (albums.length > 0) {
-    albums.map((album) => (output += `<div>${album.title}</div>`));
+    albums.map(
+      (album) =>
+        (output += `<div class="p-2 hover:bg-white text-gray-700   ">${album.title}</div>`)
+    );
     items.innerHTML = output;
   } else {
-    output = `<div class="not-found">axtardığınız söz bazamızda yoxdur</div>`;
+    output = `<div class="not-found p-2">axtardığınız söz bazamızda yoxdur</div>`;
     items.innerHTML = output;
   }
 }
