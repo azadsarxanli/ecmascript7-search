@@ -50,7 +50,7 @@ searchUser.addEventListener("input", (e) => {
   if (isTyping) {
     items.classList.remove("deactive");
     loader.classList.add("active");
-    if (searchUserValue.length >= 3) {
+    if (searchUserValue.length > 4) {
       showFilteredUser();
     } else {
       setTimeout(() => {
