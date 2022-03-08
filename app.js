@@ -21,7 +21,6 @@ fetchData().catch((error) => {
 
 function setUsers(albums) {
   let output = "";
-  console.log(albums.length);
   if (albums.length > 0) {
     albums.map((album) => (output += `<div>${album.title}</div>`));
     items.innerHTML = output;
@@ -31,21 +30,30 @@ function setUsers(albums) {
   }
 }
 
-searchUser.addEventListener("input", (e) => {
+searchUser.addEventListener("keypress", (e) => {
+  async function showFilteredUser() {
+    loader.classList.remove("active");
+    const element = e.target.value.toLowerCase();
+
+    const filteredUser = users.filter((user) =>
+      user.title.toLowerCase().includes(element)
+    );
+
+    setUsers(filteredUser);
+  }
   const isTyping = searchUser.value.length > 0;
+  const searchUserValue = searchUser.value;
+
   if (isTyping) {
     items.classList.remove("deactive");
     loader.classList.add("active");
-    setTimeout(() => {
-      loader.classList.remove("active");
-      const element = e.target.value.toLowerCase();
-
-      const filteredUser = users.filter((user) =>
-        user.title.toLowerCase().includes(element)
-      );
-
-      setUsers(filteredUser);
-    }, 800);
+    if (searchUserValue.length >= 3) {
+      showFilteredUser();
+    } else {
+      setTimeout(() => {
+        showFilteredUser();
+      }, 800);
+    }
   }
 });
 
