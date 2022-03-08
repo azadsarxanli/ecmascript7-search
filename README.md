@@ -3,6 +3,8 @@
 - FetchApi
 - async/await
 - jsonpalceholder
-  - rest api
+
+  - albums
+
 - scss
 - tailwind
