@@ -1,3 +1,5 @@
+"use strict";
+
 const items = document.querySelector(".items");
 const searchUser = document.querySelector("#search");
 let users = []; //boş bir array yaradırıq scope məsələsinə görə arrayimiz olmalıdır

@@ -3,5 +3,6 @@
 - FetchApi
 - async/await
 - jsonpalceholder
+  - rest api
 - scss
 - tailwind
